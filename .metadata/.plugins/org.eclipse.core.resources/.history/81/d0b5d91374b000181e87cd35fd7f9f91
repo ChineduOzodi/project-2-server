@@ -1,0 +1,5 @@
+package com.revature.Project2SpringBoot.repository;
+
+public class UserRepo {
+
+}
