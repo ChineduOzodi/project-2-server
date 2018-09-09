@@ -17,9 +17,10 @@ public class UserService {
 	
 	public Optional<User> getUser(int uId){
 		System.out.println("UserService -getUser");
-		return uRepo.findById(uId);
+		Optional<User> us = uRepo.findById(uId);
+		System.out.println(us);
+		return us;
 	}
-	
 	
 	public List<User> retrieveAllUsers(){
 		System.out.println("UserService - retrieveAllUsers");

@@ -1,5 +1,6 @@
 package com.revature.Project2.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.revature.Project2.beans.User;
 import com.revature.Project2.service.UserService;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
-
 @RestController
 public class UserCtrl {
 
@@ -25,15 +24,14 @@ public class UserCtrl {
 	@GetMapping("/user/{uId}")
 	public Optional<User> getUser(@PathVariable int uId){
 		System.out.println("UserCtrl -getUser");
-		uService.getUser(uId);
 		return uService.getUser(uId);
 	}
 	
-//	@GetMapping("/login")
-//	public List<User> getAllUsers(){
-//		System.out.println("UserCtrl -getAllUsers");
-//		return uService.retrieveAllUsers();
-//	}
+	@GetMapping("/login")
+	public List<User> getAllUsers(){
+		System.out.println("UserCtrl -getAllUsers");
+		return uService.retrieveAllUsers();
+	}
 	
 	// 201 -CREATED
 	@PostMapping("/register")
