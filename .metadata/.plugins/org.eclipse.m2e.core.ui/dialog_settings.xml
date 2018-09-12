@@ -6,6 +6,9 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\chin2\mygitrepos\flashcard-spring-cloud-microservices"/>
+			<item value="C:\Users\chin2\mygitrepos\project-2-server"/>
+			<item value="C:\Users\chin2\mygitrepos\project-2-server\"/>
 			<item value="C:\Users\eddie_000\my_git-repos\1806spark\JDBC\Project1"/>
 		</list>
 		<list key="projectNameTemplate">
