@@ -1,1 +1,0 @@
-INDEX VERSION 1.4+C:\Users\eddie_000\my_git-repos\project-2-server\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
