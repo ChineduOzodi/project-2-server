@@ -9,25 +9,35 @@ import javax.persistence.Table;
 @Table(name="USERS")
 public class User {
 	
+	//Primary Key for Users Table in Oracle DB
 	@Id
 	@Column(name="U_ID")
 	private int uId;
+	
 	@Column(name="USERNAME")
 	private String username;
+	
 	@Column(name="PASSWORD")
 	private String password;
+	
 	@Column(name="EMAIL")
 	private String email;
+	
 	@Column(name="F_NAME")
 	private String firstname;
+	
 	@Column(name="L_NAME")
 	private String lastname;
+	
 	@Column(name="HEIGHT")
 	private int height;
+	
 	@Column(name="WEIGHT")
 	private int weight;
+	
 	@Column(name="AGE")
 	private int age;
+	
 	@Column(name="SEX")
 	private int sex;
 	
@@ -48,6 +58,7 @@ public class User {
 		this.sex = sex;
 	}
 
+	//Getter and Setter methods for states of User
 	public int getuId() {
 		return uId;
 	}
@@ -94,9 +105,7 @@ public class User {
 	
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
-	}
-	
-	
+	}	
 	
 	public int getHeight() {
 		return height;
@@ -130,11 +139,11 @@ public class User {
 		this.sex = sex;
 	}
 
+	//Custom toString to display User information
 	@Override
 	public String toString() {
 		return "User [uId=" + uId + ", username=" + username + ", password=" + password + ", email=" + email
 				+ ", firstname=" + firstname + ", lastname=" + lastname + ", height=" + height + ", weight=" + weight
 				+ ", age=" + age + ", sex=" + sex + "]";
 	}
-
 }

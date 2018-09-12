@@ -1,0 +1,27 @@
+package com.revature.Project2.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.revature.Project2.beans.MacroNutrients;
+import com.revature.Project2.beans.User;
+import com.revature.Project2.repository.UserRepo;
+
+public class MacroNutrientsService {
+	
+	@Autowired
+	MacroNutrientsRepo mnRepo;
+	
+	public Optional<User> getUser(int uId){
+		System.out.println("MacroNutrientsService -getUser");
+		return uRepo.findById(uId);
+	}
+	
+	public MacroNutrients saveMacroNutrients(MacroNutrients mn){
+		System.out.println("MacroNutrientsService -saveMacroNutrients");
+		uRepo.save(mn);
+		return mn;
+	}
+
+}

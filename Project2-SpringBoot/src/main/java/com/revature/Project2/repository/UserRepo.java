@@ -7,6 +7,6 @@ import com.revature.Project2.beans.User;
 public interface UserRepo extends CrudRepository<User, Integer> {
 	
 	/*
-	 * CrudRepository for User beans
+	 * CrudRepository for User Bean
 	 */
 }

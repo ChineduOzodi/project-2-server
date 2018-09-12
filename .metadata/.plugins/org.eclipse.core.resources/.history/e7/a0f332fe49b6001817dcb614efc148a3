@@ -1,0 +1,63 @@
+package com.revature.Project2.beans;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
+public class MacroNutrients {
+
+	// Primary Key for Users Table in Oracle DB
+	@Id
+	@Column(name = "NUTRIENT_ID")
+	private int nutrientId;
+
+	@Column(name="MIN_AGE")
+	private int minAge;
+	
+	@Column(name="MAX_AGE")
+	private int maxAge;
+
+	@Column(name = "SEX")
+	private int sex;
+
+	@Column(name="PROTEIN_GRAMS")
+	private int proteinGrams;
+
+	@Column(name="PROTEIN_MIN_PERCENT")
+	private int proteinMinPercent;
+	
+	@Column(name="PROTEIN_MAX_PERCENT")
+	private int proteinMaxPercent;
+
+	@Column(name="CARB_GRAMS")
+	private int carbGrams;
+
+	@Column(name="CARB_MIN_PERCENT")
+	private int carbMinPercent;
+	
+	@Column(name="CARB_MAX_PERCENT")
+	private int carbMaxPercent;
+
+	@Column(name="FIBER_GRAMS")
+	private int fiberGrams;
+
+	@Column(name="SUGARS_MAX_PERCENT")
+	private int sugarsMaxPercent;
+	
+	@Column(name="FAT_MIN_PERCENT")
+	private int fatMinPercent;
+
+	@Column(name="FAT_MAX_PERCENT")
+	private int fatMaxPercent;
+
+	@Column(name="SAT_FAT_MAX_PERCENT")
+	private int satFatMaxPercent;
+
+	public MacroNutrients() {
+	}
+
+	
+}
