@@ -1,4 +1,4 @@
-package com.revature.Project2SpringBoot.beans;
+package com.revature.Project2.beans;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,26 +6,45 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name="USERS")
 public class User {
 	
+	//Primary Key for Users Table in Oracle DB
 	@Id
-	@Column
+	@Column(name="U_ID")
 	private int uId;
-	@Column
+	
+	@Column(name="USERNAME")
 	private String username;
-	@Column
+	
+	@Column(name="PASSWORD")
 	private String password;
-	@Column
+	
+	@Column(name="EMAIL")
 	private String email;
-	@Column
+	
+	@Column(name="F_NAME")
 	private String firstname;
-	@Column
+	
+	@Column(name="L_NAME")
 	private String lastname;
+	
+	@Column(name="HEIGHT")
+	private int height;
+	
+	@Column(name="WEIGHT")
+	private int weight;
+	
+	@Column(name="AGE")
+	private int age;
+	
+	@Column(name="SEX")
+	private int sex;
 	
 	public User() {}
 	
-	public User(int uId, String username, String password, String email, String firstname, String lastname) {
+	public User(int uId, String username, String password, String email, String firstname, String lastname, int height,
+			int weight, int age, int sex) {
 		super();
 		this.uId = uId;
 		this.username = username;
@@ -33,8 +52,13 @@ public class User {
 		this.email = email;
 		this.firstname = firstname;
 		this.lastname = lastname;
+		this.height = height;
+		this.weight = weight;
+		this.age = age;
+		this.sex = sex;
 	}
-	
+
+	//Getter and Setter methods for states of User
 	public int getuId() {
 		return uId;
 	}
@@ -81,12 +105,45 @@ public class User {
 	
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
-	}
+	}	
 	
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public int getWeight() {
+		return weight;
+	}
+
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public int getSex() {
+		return sex;
+	}
+
+	public void setSex(int sex) {
+		this.sex = sex;
+	}
+
+	//Custom toString to display User information
 	@Override
 	public String toString() {
 		return "User [uId=" + uId + ", username=" + username + ", password=" + password + ", email=" + email
-				+ ", firstname=" + firstname + ", lastname=" + lastname + "]";
+				+ ", firstname=" + firstname + ", lastname=" + lastname + ", height=" + height + ", weight=" + weight
+				+ ", age=" + age + ", sex=" + sex + "]";
 	}
-
 }
