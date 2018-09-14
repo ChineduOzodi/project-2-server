@@ -21,16 +21,6 @@ public class UserCtrl {
 	@Autowired
 	UserService uService;
 	
-	@GetMapping("/test")
-	public Optional<User> getMyUser(){
-		return uService.getUserByNameAndPass("egrays", "ohioislame");
-	}
-	
-	
-	
-	
-	
-	
 	@GetMapping("/user/{uId}")
 	public Optional<User> getUser(@PathVariable int uId){
 		System.out.println("UserCtrl -getUser");

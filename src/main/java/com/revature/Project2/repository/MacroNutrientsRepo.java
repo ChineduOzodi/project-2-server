@@ -16,5 +16,4 @@ import com.revature.Project2.beans.User;
 public interface MacroNutrientsRepo extends CrudRepository<MacroNutrients, Integer> {
 
 	public Optional<MacroNutrients> findByMinAgeAndMaxAgeAndSex(int minAge, int maxAge, int sex);
-
 }

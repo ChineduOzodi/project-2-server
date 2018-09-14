@@ -15,5 +15,4 @@ import com.revature.Project2.beans.User;
 public interface UserRepo extends CrudRepository<User, Integer> {
 	
 	public Optional<User> findByUsernameAndPassword (String username, String password);
-	
 }

@@ -17,12 +17,7 @@ public class UserService {
 	public Optional<User> getUserByNameAndPass(String username, String password) {
 		return uRepo.findByUsernameAndPassword(username, password);
 	}
-	
-	
-	
-	
-	
-	
+
 	public Optional<User> getUser(int uId){
 		System.out.println("UserService -getUser");
 		return uRepo.findById(uId);

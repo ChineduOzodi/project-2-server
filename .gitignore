@@ -1,11 +1,14 @@
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 
+/.recommenders/
+/.metadata/
+
 ### STS ###
+.metadata/
 .apt_generated
 .classpath
 .factorypath
-.project
 .settings
 .springBeans
 .sts4-cache
@@ -23,3 +26,4 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+

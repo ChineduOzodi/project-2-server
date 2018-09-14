@@ -12,7 +12,6 @@ public class MacroNutrients {
 
 	// Primary Key for Nutritional Goal Table in Oracle DB
 	@Id
-	@GeneratedValue
 	@Column(name = "NUTRIENT_ID")
 	private int nutrientId;
 

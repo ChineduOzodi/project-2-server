@@ -23,4 +23,5 @@ public class Project2Application {
 		return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.basePackage("com.revature.Project2"))
 				.paths(PathSelectors.any()).build();
 	}
+
 }
