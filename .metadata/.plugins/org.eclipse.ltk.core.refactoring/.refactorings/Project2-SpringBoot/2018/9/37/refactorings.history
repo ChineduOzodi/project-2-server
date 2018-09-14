@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;com.revature.Project2.service.MacroNutrientService&apos; to &apos;MacroNutrientsService&apos;&#x0D;&#x0A;- Original project: &apos;Project2-SpringBoot&apos;&#x0D;&#x0A;- Original element: &apos;com.revature.Project2.service.MacroNutrientService&apos;&#x0D;&#x0A;- Renamed element: &apos;com.revature.Project2.service.MacroNutrientsService&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MacroNutrientService&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;com.revature.Project2.service{MacroNutrientService.java[MacroNutrientService" matchStrategy="1" name="MacroNutrientsService" qualified="false" references="true" similarDeclarations="false" stamp="1536594681091" textual="false" version="1.0"/>
-</session>
