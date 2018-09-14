@@ -28,7 +28,7 @@ public class UserCtrl {
 	}
 	
 	@PostMapping("/login")
-	public List<User> getAllUsers(){
+	public Iterable<User> getAllUsers(){
 		System.out.println("UserCtrl -getAllUsers");
 		return uService.retrieveAllUsers();
 	}

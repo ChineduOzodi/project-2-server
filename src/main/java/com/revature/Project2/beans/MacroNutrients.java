@@ -2,6 +2,7 @@ package com.revature.Project2.beans;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,7 +10,7 @@ import javax.persistence.Table;
 @Table(name="NUTRITIONAL_GOAL_TABLE")
 public class MacroNutrients {
 
-	// Primary Key for Users Table in Oracle DB
+	// Primary Key for Nutritional Goal Table in Oracle DB
 	@Id
 	@Column(name = "NUTRIENT_ID")
 	private int nutrientId;
@@ -78,7 +79,8 @@ public class MacroNutrients {
 		this.fatMaxPercent = fatMaxPercent;
 		this.satFatMaxPercent = satFatMaxPercent;
 	}
-
+	
+	//Getter and Setter methods for states of MacroNutrients
 	public int getNutrientId() {
 		return nutrientId;
 	}
@@ -199,6 +201,7 @@ public class MacroNutrients {
 		this.satFatMaxPercent = satFatMaxPercent;
 	}
 
+	//Custom toString to display MacroNutrient information
 	@Override
 	public String toString() {
 		return "MacroNutrients [nutrientId=" + nutrientId + ", minAge=" + minAge + ", maxAge=" + maxAge + ", sex=" + sex

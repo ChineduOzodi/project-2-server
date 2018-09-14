@@ -1,6 +1,5 @@
 package com.revature.Project2.service;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,14 +14,18 @@ public class UserService {
 	@Autowired
 	UserRepo uRepo;
 	
+	public Optional<User> getUserByNameAndPass(String username, String password) {
+		return uRepo.findByUsernameAndPassword(username, password);
+	}
+
 	public Optional<User> getUser(int uId){
 		System.out.println("UserService -getUser");
 		return uRepo.findById(uId);
 	}
 	
-	public List<User> retrieveAllUsers(){
+	public Iterable<User> retrieveAllUsers(){
 		System.out.println("UserService - retrieveAllUsers");
-		return (List<User>) uRepo.findAll();
+		return uRepo.findAll();
 	}
 	
 	public User createUser(User us){

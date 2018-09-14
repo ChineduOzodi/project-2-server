@@ -16,21 +16,21 @@ import com.revature.Project2.service.MacroNutrientsService;
 
 @RestController
 public class MacroNutrientsCtrl {
-	
+
 	@Autowired
 	MacroNutrientsService mnService;
-	
-	@GetMapping("/macro-nutrients/{nutrientId}")
-	public Optional<MacroNutrients> getMacroNutrients(@PathVariable int nutrientId){
-		System.out.println("MacroNutrientsCtrl -getMacroNutrients");
-		return mnService.getMacroNutrients(nutrientId);
+
+	@GetMapping("/macro-nutrients/{age}/{sex}")
+	public Optional<MacroNutrients> getMacroNutrients(@PathVariable int age, @PathVariable int sex) {
+		System.out.println("MacroNutrientsCtrl -getMacroNutrients");		
+		return mnService.getMacroNutrients(age, sex);
 	}
-	
+
 	// 201 -CREATED
-		@PostMapping("/macro-nutrients")
-		public ResponseEntity<MacroNutrients> saveMacroNutrients(@RequestBody MacroNutrients mn){
-			System.out.println("MacroNutrientsCtrl -saveMacroNutrients");
-			mn = mnService.saveMacroNutrients(mn);
-			return new ResponseEntity<MacroNutrients>(mn, HttpStatus.CREATED);
-		}
+	@PostMapping("/macro-nutrients")
+	public ResponseEntity<MacroNutrients> saveMacroNutrients(@RequestBody MacroNutrients mn) {
+		System.out.println("MacroNutrientsCtrl -saveMacroNutrients");
+		mn = mnService.saveMacroNutrients(mn);
+		return new ResponseEntity<MacroNutrients>(mn, HttpStatus.CREATED);
+	}
 }

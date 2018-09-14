@@ -1,5 +1,6 @@
 /target/
 !.mvn/wrapper/maven-wrapper.jar
+
 /.recommenders/
 /.metadata/
 
@@ -25,3 +26,4 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+
