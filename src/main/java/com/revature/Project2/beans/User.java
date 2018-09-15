@@ -2,15 +2,20 @@ package com.revature.Project2.beans;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="USERS")
+@SequenceGenerator(name="new_user", sequenceName="NEW_USER_SEQ", initialValue=1, allocationSize=1)
 public class User {
 	
 	//Primary Key for Users Table in Oracle DB
 	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="new_user")
 	@Column(name="U_ID")
 	private int uId;
 	
