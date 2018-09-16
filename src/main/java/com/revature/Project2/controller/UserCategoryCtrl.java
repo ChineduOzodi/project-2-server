@@ -25,12 +25,12 @@ public class UserCategoryCtrl {
 		return ucService.getAllUserCategory(uId);
 	}
 
-	// This method will save a user category----------------------------------------Not Done
-//	@PostMapping("/user-category/")
-//	public ResponseEntity<UserCategory> createUserCategory(@RequestBody String mealCatName) {
-//		System.out.println("UserCategoryCtrl -createUserCategory");
-//		UserCategory uc = new UserCategory();
-//		uc = ucService.createUserCategory(mealCatName);
-//		return new ResponseEntity<UserCategory>(uc, HttpStatus.CREATED);
-//	}
+	// This method will save a user category
+	@PostMapping("/user-category/{uId}")
+	public ResponseEntity<UserCategory> createUserCategory(@PathVariable int uId, @RequestBody String mealCatName) {
+		System.out.println("UserCategoryCtrl -createUserCategory");
+		UserCategory uc = new UserCategory();
+		uc = ucService.createUserCategory(uId, mealCatName);
+		return new ResponseEntity<UserCategory>(uc, HttpStatus.CREATED);
+	}
 }

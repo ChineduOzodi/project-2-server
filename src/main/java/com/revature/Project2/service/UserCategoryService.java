@@ -10,10 +10,10 @@ import com.revature.Project2.repository.UserCategoryRepo;
 
 @Service
 public class UserCategoryService {
-	
+
 	@Autowired
 	UserCategoryRepo ucRepo;
-	
+
 	@Autowired
 	MealCategoryRepo mcRepo;
 
@@ -22,15 +22,24 @@ public class UserCategoryService {
 		return ucRepo.findAllByUId(uId);
 	}
 
-//	public UserCategory createUserCategory(String mealCatName) {
-//		System.out.println("UserCategoryService -createUserCategory");
-//		MealCategory mc = new MealCategory();
-//		if (mcRepo.existsByMealCatName(mealCatName)) {
-//			
-//		} else 
-//			
-//		uc = ucRepo.save(uc);
-//		return uc;
-//	}
+	public UserCategory createUserCategory(int uId, String mealCatName) {
+		System.out.println("UserCategoryService -createUserCategory");
+		UserCategory uc = new UserCategory();
+		MealCategory mc = new MealCategory();
 
+		if (mcRepo.existsByMealCatName(mealCatName)) {
+			mc = mcRepo.findByMealCatName(mealCatName);
+			uc.setuId(uId);
+			uc.setMealCatId(mc.getMealCatId());
+			uc = ucRepo.save(uc);
+		} else {
+			mc.setMealCatName(mealCatName);
+			mc = mcRepo.save(mc);
+			uc.setuId(uId);
+			uc.setMealCatId(mc.getMealCatId());
+			uc = ucRepo.save(uc);
+		}
+		
+		return uc;
+	}
 }
