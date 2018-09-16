@@ -11,4 +11,6 @@ public interface MealCategoryRepo extends CrudRepository<MealCategory, Integer> 
 	
 	public boolean existsByMealCatName(String mealCatName);
 
+	public MealCategory findByMealCatName(String mealCatName);
+
 }
