@@ -38,8 +38,7 @@
 		</dependency>
 
 		<!-- ojdbc7.jar example -->
-<!--
->>>>>>> added endpoints for user, food plan, user category/meal category
+		<!--
         <dependency>
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc7</artifactId>
