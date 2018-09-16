@@ -1,6 +1,5 @@
 package com.revature.Project2.controller;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,24 +21,33 @@ public class UserCtrl {
 	@Autowired
 	UserService uService;
 	
-	@GetMapping("/user/{uId}")
-	public Optional<User> getUser(@PathVariable int uId){
-		System.out.println("UserCtrl -getUser");
-		return uService.getUser(uId);
-	}
-	
-	@PostMapping("/login")
+	// This method will get all users
+	@GetMapping("/users/")
 	public Iterable<User> getAllUsers(){
 		System.out.println("UserCtrl -getAllUsers");
-		return uService.retrieveAllUsers();
+		return uService.getAllUsers();
+	}	
+		
+	// This method will get all user information
+	@GetMapping("/users/login/{username}")
+	public Optional<User> loginUser(@PathVariable String username){
+		System.out.println("UserCtrl -loginUser");
+		return uService.loginUser(username);
 	}
 	
-	// 201 -CREATED
-	@PostMapping("/register")
+	// This method will create a new user (register a new user)
+	@PostMapping("/users/")
 	public ResponseEntity<User> createUser(@RequestBody User us){
 		System.out.println("UserCtrl -createUser");
 		us = uService.createUser(us);
 		return new ResponseEntity<User>(us, HttpStatus.CREATED);
 	}
 	
+	// This method will update a users information
+	@PutMapping("/users/{uId}/")
+	public ResponseEntity<User> updateUser(@RequestBody User us){
+		System.out.println("UserCtrl -updateUser");
+		us = uService.updateUser(us);
+		return new ResponseEntity<User>(us, HttpStatus.ACCEPTED);
+	}
 }

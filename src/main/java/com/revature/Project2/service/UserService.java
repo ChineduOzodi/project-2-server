@@ -10,28 +10,29 @@ import com.revature.Project2.repository.UserRepo;
 
 @Service
 public class UserService {
-	
+
 	@Autowired
 	UserRepo uRepo;
-	
-	public Optional<User> getUserByNameAndPass(String username, String password) {
-		return uRepo.findByUsernameAndPassword(username, password);
-	}
 
-	public Optional<User> getUser(int uId){
-		System.out.println("UserService -getUser");
-		return uRepo.findById(uId);
-	}
-	
-	public Iterable<User> retrieveAllUsers(){
-		System.out.println("UserService - retrieveAllUsers");
+	public Iterable<User> getAllUsers() {
+		System.out.println("UserService - getAllUsers");
 		return uRepo.findAll();
 	}
 	
-	public User createUser(User us){
+	public Optional<User> loginUser(String username) {
+		System.out.println("UserService -loginUser");
+		return uRepo.findByUsername(username);
+	}
+
+	public User createUser(User us) {
 		System.out.println("UserService -createUser");
-		uRepo.save(us);
+		us = uRepo.save(us);
 		return us;
 	}
 
+	public User updateUser(User us) {
+		System.out.println("UserService -updateUser");
+		us = uRepo.save(us);
+		return us;
+	}
 }
