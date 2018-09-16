@@ -20,13 +20,14 @@ public class MacroNutrientsCtrl {
 	@Autowired
 	MacroNutrientsService mnService;
 
+	// This method will get macro nutrients based on age and sex
 	@GetMapping("/macro-nutrients/{age}/{sex}")
 	public Optional<MacroNutrients> getMacroNutrients(@PathVariable int age, @PathVariable int sex) {
 		System.out.println("MacroNutrientsCtrl -getMacroNutrients");		
 		return mnService.getMacroNutrients(age, sex);
 	}
 
-	// 201 -CREATED
+	// This method will save macro nutrients
 	@PostMapping("/macro-nutrients")
 	public ResponseEntity<MacroNutrients> saveMacroNutrients(@RequestBody MacroNutrients mn) {
 		System.out.println("MacroNutrientsCtrl -saveMacroNutrients");
