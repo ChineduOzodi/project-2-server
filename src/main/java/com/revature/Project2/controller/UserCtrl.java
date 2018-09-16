@@ -22,21 +22,21 @@ public class UserCtrl {
 	UserService uService;
 	
 	// This method will get all users
-	@GetMapping("/all-users/")
+	@GetMapping("/users/")
 	public Iterable<User> getAllUsers(){
 		System.out.println("UserCtrl -getAllUsers");
 		return uService.getAllUsers();
 	}	
 		
 	// This method will get all user information
-	@GetMapping("/user/login/{username}")
+	@GetMapping("/users/login/{username}")
 	public Optional<User> loginUser(@PathVariable String username){
 		System.out.println("UserCtrl -loginUser");
 		return uService.loginUser(username);
 	}
 	
 	// This method will create a new user (register a new user)
-	@PostMapping("/user/")
+	@PostMapping("/users/")
 	public ResponseEntity<User> createUser(@RequestBody User us){
 		System.out.println("UserCtrl -createUser");
 		us = uService.createUser(us);
@@ -44,7 +44,7 @@ public class UserCtrl {
 	}
 	
 	// This method will update a users information
-	@PutMapping("/user/{uId}/")
+	@PutMapping("/users/{uId}/")
 	public ResponseEntity<User> updateUser(@RequestBody User us){
 		System.out.println("UserCtrl -updateUser");
 		us = uService.updateUser(us);
