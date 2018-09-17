@@ -1,6 +1,7 @@
 package com.revature.Project2.controller;
 
-import java.util.Optional;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +27,8 @@ public class FoodPlanCtrl {
 	
 	// This method will get a food plan
 	@GetMapping("/plan/user/{uId}/")
-	public Optional<FoodPlan> getFoodPlan(@PathVariable int uId) {
-		logger.info("Getting food plan for user with uId " + uId);	
+	public Iterable<FoodPlan> getFoodPlan(@PathVariable int uId) {
+		logger.info("Getting foods for user with uId " + uId);
 		return fpService.getFoodPlan(uId);
 	}
 	

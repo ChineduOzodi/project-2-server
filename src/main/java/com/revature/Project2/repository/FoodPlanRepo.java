@@ -12,6 +12,6 @@ import com.revature.Project2.beans.FoodPlan;
 public interface FoodPlanRepo extends CrudRepository<FoodPlan, Integer> {
 
 	// Custom Crud method to get food plan based on user id
-	public Optional<FoodPlan> findByUId(int uId);
+	public Iterable<FoodPlan> findByUId(int uId);
 
 }

@@ -1,6 +1,7 @@
 package com.revature.Project2.service;
 
-import java.util.Optional;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class FoodPlanService {
 	@Autowired
 	FoodPlanRepo fpRepo;
 
-	public Optional<FoodPlan> getFoodPlan(int uId) {
+	public Iterable<FoodPlan> getFoodPlan(int uId) {
 		return fpRepo.findByUId(uId);
 	}
 
