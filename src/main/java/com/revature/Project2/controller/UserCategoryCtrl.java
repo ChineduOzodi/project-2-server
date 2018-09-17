@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.revature.Project2.beans.MealCategory;
 import com.revature.Project2.beans.UserCategory;
 import com.revature.Project2.service.UserCategoryService;
 
@@ -27,10 +28,10 @@ public class UserCategoryCtrl {
 
 	// This method will save a user category
 	@PostMapping("/user-category/{uId}")
-	public ResponseEntity<UserCategory> createUserCategory(@PathVariable int uId, @RequestBody String mealCatName) {
+	public ResponseEntity<UserCategory> createUserCategory(@PathVariable int uId, @RequestBody MealCategory mealCat) {
 		System.out.println("UserCategoryCtrl -createUserCategory");
 		UserCategory uc = new UserCategory();
-		uc = ucService.createUserCategory(uId, mealCatName);
+		uc = ucService.createUserCategory(uId, mealCat.getMealCatName());
 		return new ResponseEntity<UserCategory>(uc, HttpStatus.CREATED);
 	}
 }
