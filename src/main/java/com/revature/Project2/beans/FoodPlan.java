@@ -1,5 +1,7 @@
 package com.revature.Project2.beans;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -35,13 +37,13 @@ public class FoodPlan {
 	private int measureIndex;
 
 	@Column(name = "TIMESTAMP")
-	private String timestamp;
+	private Timestamp timestamp;
 
 	public FoodPlan() {
 	}
 
 	public FoodPlan(int foodId, int uId, String ndbno, int mealCatId, int servingAmount, int measureIndex,
-			String timestamp) {
+			Timestamp timestamp) {
 		super();
 		this.foodId = foodId;
 		this.uId = uId;
@@ -101,11 +103,11 @@ public class FoodPlan {
 		this.measureIndex = measureIndex;
 	}
 
-	public String getTimestamp() {
+	public Timestamp getTimestamp() {
 		return timestamp;
 	}
 
-	public void setTimestamp(String timestamp) {
+	public void setTimestamp(Timestamp timestamp) {
 		this.timestamp = timestamp;
 	}
 
