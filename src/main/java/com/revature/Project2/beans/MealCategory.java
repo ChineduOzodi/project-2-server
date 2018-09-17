@@ -9,45 +9,48 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="MEAL_CATEGORY")
-@SequenceGenerator(name="new_meal_category", sequenceName="NEW_MEAL_SEQ", initialValue=1, allocationSize=1)
+@Table(name = "MEAL_CATEGORY")
+@SequenceGenerator(name = "new_meal_category", sequenceName = "NEW_MEAL_SEQ", initialValue = 1, allocationSize = 1)
 public class MealCategory {
-	
-	//Primary Key for Meal Category Table in Oracle DB
-		@Id
-		@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="new_meal_category")
-		@Column(name="MEAL_CAT_ID")
-		private int mealCatId;
 
-		@Column(name="MEAL_CAT_NAME")
-		private String mealCatName;
+	// Primary Key for Meal Category Table in Oracle DB
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "new_meal_category")
+	@Column(name = "MEAL_CAT_ID")
+	private int mealCatId;
 
-		public MealCategory() {}
+	@Column(name = "MEAL_CAT_NAME")
+	private String mealCatName;
 
-		public MealCategory(int mealCatId, String mealCatName) {
-			super();
-			this.mealCatId = mealCatId;
-			this.mealCatName = mealCatName;
-		}
+	public MealCategory() {
+	}
 
-		public int getMealCatId() {
-			return mealCatId;
-		}
+	public MealCategory(int mealCatId, String mealCatName) {
+		super();
+		this.mealCatId = mealCatId;
+		this.mealCatName = mealCatName;
+	}
 
-		public void setMealCatId(int mealCatId) {
-			this.mealCatId = mealCatId;
-		}
+	// Getter and Setter methods for states of Meal Category
+	public int getMealCatId() {
+		return mealCatId;
+	}
 
-		public String getMealCatName() {
-			return mealCatName;
-		}
+	public void setMealCatId(int mealCatId) {
+		this.mealCatId = mealCatId;
+	}
 
-		public void setMealCatName(String mealCatName) {
-			this.mealCatName = mealCatName;
-		}
+	public String getMealCatName() {
+		return mealCatName;
+	}
 
-		@Override
-		public String toString() {
-			return "MealCategory [mealCatId=" + mealCatId + ", mealCatName=" + mealCatName + "]";
-		}
+	public void setMealCatName(String mealCatName) {
+		this.mealCatName = mealCatName;
+	}
+
+	// Custom toString to display Meal Category information
+	@Override
+	public String toString() {
+		return "MealCategory [mealCatId=" + mealCatId + ", mealCatName=" + mealCatName + "]";
+	}
 }
