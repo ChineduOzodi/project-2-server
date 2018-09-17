@@ -2,6 +2,7 @@ package com.revature.Project2.controller;
 
 import java.util.Optional;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,8 @@ import com.revature.Project2.service.MacroNutrientsService;
 
 @RestController
 public class MacroNutrientsCtrl {
+	
+	final static Logger logger = Logger.getLogger(MacroNutrientsCtrl.class);
 
 	@Autowired
 	MacroNutrientsService mnService;
@@ -23,15 +26,21 @@ public class MacroNutrientsCtrl {
 	// This method will get macro nutrients based on age and sex
 	@GetMapping("/macro-nutrients/{age}/{sex}")
 	public Optional<MacroNutrients> getMacroNutrients(@PathVariable int age, @PathVariable int sex) {
-		System.out.println("MacroNutrientsCtrl -getMacroNutrients");		
+		String gender = "";
+		if (sex == 1) {
+			gender = "male";
+		} if (sex == 2) {
+			gender = "female";
+		}
+		logger.info("Macro nutrients for " + gender + " age " + age + " are being loaded.");	
 		return mnService.getMacroNutrients(age, sex);
 	}
 
 	// This method will save macro nutrients
 	@PostMapping("/macro-nutrients")
 	public ResponseEntity<MacroNutrients> saveMacroNutrients(@RequestBody MacroNutrients mn) {
-		System.out.println("MacroNutrientsCtrl -saveMacroNutrients");
 		mn = mnService.saveMacroNutrients(mn);
+		logger.info("Macro nutrients are being created.");
 		return new ResponseEntity<MacroNutrients>(mn, HttpStatus.CREATED);
 	}
 }

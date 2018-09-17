@@ -9,56 +9,57 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="USERS")
-@SequenceGenerator(name="new_user", sequenceName="NEW_USER_SEQ", initialValue=1, allocationSize=1)
+@Table(name = "USERS")
+@SequenceGenerator(name = "new_user", sequenceName = "NEW_USER_SEQ", initialValue = 1, allocationSize = 1)
 public class User {
-	
-	//Primary Key for Users Table in Oracle DB
+
+	// Primary Key for Users Table in Oracle DB
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="new_user")
-	@Column(name="U_ID")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "new_user")
+	@Column(name = "U_ID")
 	private int uId;
-	
-	@Column(name="USERNAME")
+
+	@Column(name = "USERNAME")
 	private String username;
-	
-	@Column(name="PASSWORD")
+
+	@Column(name = "PASSWORD")
 	private String password;
-	
-	@Column(name="EMAIL")
+
+	@Column(name = "EMAIL")
 	private String email;
-	
-	@Column(name="F_NAME")
+
+	@Column(name = "F_NAME")
 	private String firstname;
-	
-	@Column(name="L_NAME")
+
+	@Column(name = "L_NAME")
 	private String lastname;
-	
-	@Column(name="HEIGHT")
+
+	@Column(name = "HEIGHT")
 	private int height;
-	
-	@Column(name="WEIGHT")
+
+	@Column(name = "WEIGHT")
 	private int weight;
-	
-	@Column(name="AGE")
+
+	@Column(name = "AGE")
 	private int age;
-	
-	@Column(name="SEX")
+
+	@Column(name = "SEX")
 	private int sex;
-	
-	@Column(name="PROTEIN")
+
+	@Column(name = "PROTEIN")
 	private int protein;
-	
-	@Column(name="CARBOHYDRATES")
+
+	@Column(name = "CARBOHYDRATES")
 	private int carbohydrates;
-	
-	@Column(name="FAT")
+
+	@Column(name = "FAT")
 	private int fat;
-	
-	@Column(name="FIBER")
+
+	@Column(name = "FIBER")
 	private int fiber;
-	
-	public User() {}
+
+	public User() {
+	}
 
 	public User(int uId, String username, String password, String email, String firstname, String lastname, int height,
 			int weight, int age, int sex, int protein, int carbohydrates, int fat, int fiber) {
@@ -79,55 +80,55 @@ public class User {
 		this.fiber = fiber;
 	}
 
-	//Getter and Setter methods for states of User
+	// Getter and Setter methods for states of User
 	public int getuId() {
 		return uId;
 	}
-	
+
 	public void setuId(int uId) {
 		this.uId = uId;
 	}
-	
+
 	public String getUsername() {
 		return username;
 	}
-	
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	
+
 	public String getPassword() {
 		return password;
 	}
-	
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 	public String getEmail() {
 		return email;
 	}
-	
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	public String getFirstname() {
 		return firstname;
 	}
-	
+
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
-	
+
 	public String getLastname() {
 		return lastname;
 	}
-	
+
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
-	}	
-	
+	}
+
 	public int getHeight() {
 		return height;
 	}
@@ -192,12 +193,12 @@ public class User {
 		this.fiber = fiber;
 	}
 
-	//Custom toString to display User information
+	// Custom toString to display User information
 	@Override
 	public String toString() {
 		return "User [uId=" + uId + ", username=" + username + ", password=" + password + ", email=" + email
 				+ ", firstname=" + firstname + ", lastname=" + lastname + ", height=" + height + ", weight=" + weight
 				+ ", age=" + age + ", sex=" + sex + ", protein=" + protein + ", carbohydrates=" + carbohydrates
 				+ ", fat=" + fat + ", fiber=" + fiber + "]";
-	}	
+	}
 }

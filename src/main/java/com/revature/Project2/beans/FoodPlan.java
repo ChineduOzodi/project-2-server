@@ -9,35 +9,36 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="FOOD_PLAN")
-@SequenceGenerator(name="new_food_plan", sequenceName="NEW_FOOD_SEQ", initialValue=1, allocationSize=1)
+@Table(name = "FOOD_PLAN")
+@SequenceGenerator(name = "new_food_plan", sequenceName = "NEW_FOOD_SEQ", initialValue = 1, allocationSize = 1)
 public class FoodPlan {
-	
-	//Primary Key for Food Plan Table in Oracle DB
+
+	// Primary Key for Food Plan Table in Oracle DB
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="new_food_plan")
-	@Column(name="FOOD_ID")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "new_food_plan")
+	@Column(name = "FOOD_ID")
 	private int foodId;
-	
-	@Column(name="U_ID")
+
+	@Column(name = "U_ID")
 	private int uId;
-	
-	@Column(name="NDBNO")
+
+	@Column(name = "NDBNO")
 	private String ndbno;
-	
-	@Column(name="MEAL_CAT_ID")
+
+	@Column(name = "MEAL_CAT_ID")
 	private int mealCatId;
-	
-	@Column(name="SERVING_AMOUNT")
+
+	@Column(name = "SERVING_AMOUNT")
 	private int servingAmount;
-	
-	@Column(name="MEASURE_INDEX")
+
+	@Column(name = "MEASURE_INDEX")
 	private int measureIndex;
-	
-	@Column(name="TIMESTAMP")
+
+	@Column(name = "TIMESTAMP")
 	private String timestamp;
 
-	public FoodPlan() {}
+	public FoodPlan() {
+	}
 
 	public FoodPlan(int foodId, int uId, String ndbno, int mealCatId, int servingAmount, int measureIndex,
 			String timestamp) {
@@ -51,7 +52,7 @@ public class FoodPlan {
 		this.timestamp = timestamp;
 	}
 
-	//Getter and Setter methods for states of Food Plan
+	// Getter and Setter methods for states of Food Plan
 	public int getFoodId() {
 		return foodId;
 	}
@@ -108,7 +109,7 @@ public class FoodPlan {
 		this.timestamp = timestamp;
 	}
 
-	//Custom toString to display Food Plan information
+	// Custom toString to display Food Plan information
 	@Override
 	public String toString() {
 		return "FoodPlan [foodId=" + foodId + ", uId=" + uId + ", ndbno=" + ndbno + ", mealCatId=" + mealCatId
