@@ -23,7 +23,7 @@ public class FoodPlan {
 	private int uId;
 	
 	@Column(name="NDBNO")
-	private int ndbno;
+	private String ndbno;
 	
 	@Column(name="MEAL_CAT_ID")
 	private int mealCatId;
@@ -39,7 +39,7 @@ public class FoodPlan {
 
 	public FoodPlan() {}
 
-	public FoodPlan(int foodId, int uId, int ndbno, int mealCatId, int servingAmount, int measureIndex,
+	public FoodPlan(int foodId, int uId, String ndbno, int mealCatId, int servingAmount, int measureIndex,
 			String timestamp) {
 		super();
 		this.foodId = foodId;
@@ -68,11 +68,11 @@ public class FoodPlan {
 		this.uId = uId;
 	}
 
-	public int getNdbno() {
+	public String getNdbno() {
 		return ndbno;
 	}
 
-	public void setNdbno(int ndbno) {
+	public void setNdbno(String ndbno) {
 		this.ndbno = ndbno;
 	}
 

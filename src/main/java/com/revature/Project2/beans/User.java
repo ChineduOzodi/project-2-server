@@ -46,10 +46,22 @@ public class User {
 	@Column(name="SEX")
 	private int sex;
 	
-	public User() {}
+	@Column(name="PROTEIN")
+	private int protein;
 	
+	@Column(name="CARBOHYDRATES")
+	private int carbohydrates;
+	
+	@Column(name="FAT")
+	private int fat;
+	
+	@Column(name="FIBER")
+	private int fiber;
+	
+	public User() {}
+
 	public User(int uId, String username, String password, String email, String firstname, String lastname, int height,
-			int weight, int age, int sex) {
+			int weight, int age, int sex, int protein, int carbohydrates, int fat, int fiber) {
 		super();
 		this.uId = uId;
 		this.username = username;
@@ -61,6 +73,10 @@ public class User {
 		this.weight = weight;
 		this.age = age;
 		this.sex = sex;
+		this.protein = protein;
+		this.carbohydrates = carbohydrates;
+		this.fat = fat;
+		this.fiber = fiber;
 	}
 
 	//Getter and Setter methods for states of User
@@ -144,11 +160,44 @@ public class User {
 		this.sex = sex;
 	}
 
+	public int getProtein() {
+		return protein;
+	}
+
+	public void setProtein(int protein) {
+		this.protein = protein;
+	}
+
+	public int getCarbohydrates() {
+		return carbohydrates;
+	}
+
+	public void setCarbohydrates(int carbohydrates) {
+		this.carbohydrates = carbohydrates;
+	}
+
+	public int getFat() {
+		return fat;
+	}
+
+	public void setFat(int fat) {
+		this.fat = fat;
+	}
+
+	public int getFiber() {
+		return fiber;
+	}
+
+	public void setFiber(int fiber) {
+		this.fiber = fiber;
+	}
+
 	//Custom toString to display User information
 	@Override
 	public String toString() {
 		return "User [uId=" + uId + ", username=" + username + ", password=" + password + ", email=" + email
 				+ ", firstname=" + firstname + ", lastname=" + lastname + ", height=" + height + ", weight=" + weight
-				+ ", age=" + age + ", sex=" + sex + "]";
+				+ ", age=" + age + ", sex=" + sex + ", protein=" + protein + ", carbohydrates=" + carbohydrates
+				+ ", fat=" + fat + ", fiber=" + fiber + "]";
 	}	
 }
