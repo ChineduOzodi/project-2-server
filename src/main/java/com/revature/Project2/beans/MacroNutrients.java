@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="NUTRITIONAL_GOAL_TABLE")
+@Table(name = "NUTRITIONAL_GOAL_TABLE")
 public class MacroNutrients {
 
 	// Primary Key for Nutritional Goal Table in Oracle DB
@@ -14,49 +14,50 @@ public class MacroNutrients {
 	@Column(name = "NUTRIENT_ID")
 	private int nutrientId;
 
-	@Column(name="MIN_AGE")
+	@Column(name = "MIN_AGE")
 	private int minAge;
-	
-	@Column(name="MAX_AGE")
+
+	@Column(name = "MAX_AGE")
 	private int maxAge;
 
 	@Column(name = "SEX")
 	private int sex;
 
-	@Column(name="PROTEIN_GRAMS")
+	@Column(name = "PROTEIN_GRAMS")
 	private int proteinGrams;
 
-	@Column(name="PROTEIN_MIN_PERCENT")
+	@Column(name = "PROTEIN_MIN_PERCENT")
 	private int proteinMinPercent;
-	
-	@Column(name="PROTEIN_MAX_PERCENT")
+
+	@Column(name = "PROTEIN_MAX_PERCENT")
 	private int proteinMaxPercent;
 
-	@Column(name="CARB_GRAMS")
+	@Column(name = "CARB_GRAMS")
 	private int carbGrams;
 
-	@Column(name="CARB_MIN_PERCENT")
+	@Column(name = "CARB_MIN_PERCENT")
 	private int carbMinPercent;
-	
-	@Column(name="CARB_MAX_PERCENT")
+
+	@Column(name = "CARB_MAX_PERCENT")
 	private int carbMaxPercent;
 
-	@Column(name="FIBER_GRAMS")
+	@Column(name = "FIBER_GRAMS")
 	private int fiberGrams;
 
-	@Column(name="SUGARS_MAX_PERCENT")
+	@Column(name = "SUGARS_MAX_PERCENT")
 	private int sugarsMaxPercent;
-	
-	@Column(name="FAT_MIN_PERCENT")
+
+	@Column(name = "FAT_MIN_PERCENT")
 	private int fatMinPercent;
 
-	@Column(name="FAT_MAX_PERCENT")
+	@Column(name = "FAT_MAX_PERCENT")
 	private int fatMaxPercent;
 
-	@Column(name="SAT_FAT_MAX_PERCENT")
+	@Column(name = "SAT_FAT_MAX_PERCENT")
 	private int satFatMaxPercent;
 
-	public MacroNutrients() {}
+	public MacroNutrients() {
+	}
 
 	public MacroNutrients(int nutrientId, int minAge, int maxAge, int sex, int proteinGrams, int proteinMinPercent,
 			int proteinMaxPercent, int carbGrams, int carbMinPercent, int carbMaxPercent, int fiberGrams,
@@ -78,8 +79,8 @@ public class MacroNutrients {
 		this.fatMaxPercent = fatMaxPercent;
 		this.satFatMaxPercent = satFatMaxPercent;
 	}
-	
-	//Getter and Setter methods for states of MacroNutrients
+
+	// Getter and Setter methods for states of MacroNutrients
 	public int getNutrientId() {
 		return nutrientId;
 	}
@@ -200,7 +201,7 @@ public class MacroNutrients {
 		this.satFatMaxPercent = satFatMaxPercent;
 	}
 
-	//Custom toString to display MacroNutrient information
+	// Custom toString to display MacroNutrient information
 	@Override
 	public String toString() {
 		return "MacroNutrients [nutrientId=" + nutrientId + ", minAge=" + minAge + ", maxAge=" + maxAge + ", sex=" + sex
@@ -209,5 +210,5 @@ public class MacroNutrients {
 				+ ", carbMaxPercent=" + carbMaxPercent + ", fiberGrams=" + fiberGrams + ", sugarsMaxPercent="
 				+ sugarsMaxPercent + ", fatMinPercent=" + fatMinPercent + ", fatMaxPercent=" + fatMaxPercent
 				+ ", satFatMaxPercent=" + satFatMaxPercent + "]";
-	}	
+	}
 }

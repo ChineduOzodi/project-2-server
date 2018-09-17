@@ -2,6 +2,7 @@ package com.revature.Project2.service;
 
 import java.util.Optional;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,12 +11,14 @@ import com.revature.Project2.repository.MacroNutrientsRepo;
 
 @Service
 public class MacroNutrientsService {
+	
+	final static Logger logger = Logger.getLogger(MacroNutrientsService.class);
 
 	@Autowired
 	MacroNutrientsRepo mnRepo;
 
+	// This method gets the correct macro nutrients based on age and sex of user
 	public Optional<MacroNutrients> getMacroNutrients(int age, int sex) {
-		System.out.println("MacroNutrientsService -getMacroNutrients");
 
 		int minAge = 0;
 		int maxAge = 0;
@@ -46,10 +49,12 @@ public class MacroNutrientsService {
 		return mnRepo.findByMinAgeAndMaxAgeAndSex(minAge, maxAge, sex);
 	}
 
+	// This method saves macro nutrients for a user
 	public MacroNutrients saveMacroNutrients(MacroNutrients mn) {
-		System.out.println("MacroNutrientsService -saveMacroNutrients");
-		mnRepo.save(mn);
+		mn = mnRepo.save(mn);
+		if (mn == null) {
+			logger.warn("Macro nutrients could not be created.");
+		}
 		return mn;
 	}
-
 }
